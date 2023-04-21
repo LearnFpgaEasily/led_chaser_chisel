@@ -43,7 +43,7 @@ class PulseGenerator(pulseThreshold:Int) extends Module {
     
     // compare the pulseCounter.count with the pulseThreshold
     val pulse_comparator = Module(new UnsignedComparator(log2Ceil(pulseThreshold)))
-    pulse_comparator.io.input2 := (pulseThreshold-1).U
+    pulse_comparator.io.input2 := (pulseThreshold-2).U
     pulse_comparator.io.input1 := pulseCounter.io.count
 
     // Detect the cycle when the UpCounter is equal to pulseThreshold
